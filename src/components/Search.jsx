@@ -66,10 +66,10 @@ const Search = (props) => {
       </form>
       <div>
       <p className="slogan">Rechercher par ici vos films préférés</p>
-      { (loading) 
+      {/* { (loading) 
       ? 
       <Loader type="ThreeDots" color="#f1075d" height="100" width="100" /> 
-      :
+      : */}
       <div className="movies">
 
            { currentMovies.map((currentMovie, index) => (
