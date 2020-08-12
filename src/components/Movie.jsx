@@ -1,4 +1,6 @@
 import React from "react";
+import { Card, Icon, Image } from 'semantic-ui-react'
+import photo_invalide from "../images/photo_invalide.jpg"
 
 const DEFAULT_PLACEHOLDER_IMAGE = "/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg";
 
@@ -8,19 +10,28 @@ const Movie = ({movie}) => {
   
   return (
     <div className="movie">
-    <h2>{movie.title}</h2>
-    <div>
-    <a href={"/detailMovie/"+movie.id}>
-      <img
-        width="200"
-        alt={`The movie titled: ${movie.title}`}
-        src={"https://image.tmdb.org/t/p/w300"+ poster}
-      />
-    </a>
-    </div>
-    <br/>
-  <p>{movie.overview}</p>
-    <p>({movie.release_date})</p>
+
+      <Card   href="/detailMovie"
+        onClick={() => {
+          localStorage.setItem(
+            "detailsMovies",
+            JSON.stringify({
+              id: movie.id,
+              titre: movie.title,
+              dateSortie: movie.release_date,
+              description: movie.overview,
+              poster:("https://image.tmdb.org/t/p/w300"+ movie.poster_path),
+              vote: movie.vote_count,
+              genre: movie.genre_ids[0],
+            })
+          );
+        }}
+      >
+
+          <Image src={"https://image.tmdb.org/t/p/w300"+ poster} />
+          
+          <Card.Header>{movie.title}</Card.Header>
+        </Card>
   </div>
   );
 };

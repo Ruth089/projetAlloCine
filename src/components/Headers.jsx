@@ -7,24 +7,12 @@ import { Fragment } from 'react';
 
 import Navbar from 'react-bootstrap/Navbar'
 
-const Headers = () => {
+const Headers = (props) => {
     
   return ( 
-    <>
-      <Navbar bg="dark" variant="dark">
-           <Navbar.Brand href="#home">
-              <img
-                alt=""
-                src="/logo.svg"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-            Allo cine
-        </Navbar.Brand>
-      </Navbar>
-      <br/>
-    </> 
+    <header className="header">
+      <h2>{props.text}</h2>
+    </header>
   );
 }
  
