@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../scss/App.scss';
-import Header from "./Headers";
 import Search from "./Search";
-import DetailMovie from "./DetailMovie";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,10 +16,7 @@ const App = () => {
     
     return (
       <Router>
-        <div className="App" >
-          <Header text="ALLO CINE" />
-          <div className="container">
-            
+        <div className="App" > 
             <Route
                 exact
                 path="/"
@@ -30,9 +25,7 @@ const App = () => {
                     <Search/>
                   </>
                 )}
-              />
-            <Route path="/detailMovie" component={DetailMovie}/>          
-          </div>
+              />        
         </div>
       </Router>
   );
